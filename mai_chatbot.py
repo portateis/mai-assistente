@@ -64,6 +64,7 @@ def responder_mensagem(mensagem):
             "🕒 Atendimento: Seg-Sex, 7:30 às 18:00"
         )
         conversation_history.append({"role": "assistant", "content": resposta})
+        limitar_historico()
         print("🧠 MAI respondeu:", resposta)
         return resposta
 
@@ -99,6 +100,7 @@ def responder_mensagem(mensagem):
                 f"📧 E-mail: {dados['email_gerente']}"
             )
             conversation_history.append({"role": "assistant", "content": resposta})
+            limitar_historico()
             print("🧠 MAI respondeu:", resposta)
             return resposta
 
@@ -108,9 +110,17 @@ def responder_mensagem(mensagem):
             messages=conversation_history
         )
         resposta = openai_response.choices[0].message.content.strip()
-    except Exception as e:
+    except Exception:
         resposta = "Desculpe, não consegui processar sua mensagem agora. Tente novamente mais tarde."
 
     conversation_history.append({"role": "assistant", "content": resposta})
+    limitar_historico()
     print("🧠 MAI respondeu:", resposta)
     return resposta
+
+def limitar_historico():
+    global conversation_history
+    MAX_MSG = 12
+    mensagens_uteis = conversation_history[1:]
+    if len(mensagens_uteis) > MAX_MSG:
+        conversation_history[:] = [conversation_history[0]] + mensagens_uteis[-MAX_MSG:]
