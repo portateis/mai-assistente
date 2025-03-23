@@ -65,6 +65,7 @@ def responder_mensagem(mensagem):
         )
         conversation_history.append({"role": "assistant", "content": resposta})
     print("🧠 MAI respondeu:", resposta)
+        print("🧠 MAI respondeu:", resposta)
         return resposta
 
     if lower_msg in ["1", "orçamento"]:
@@ -87,6 +88,7 @@ def responder_mensagem(mensagem):
             resposta += f"🏢 *{filial}*\n👤 {dados['gerente']} - 📞 https://wa.me/{dados['whatsapp_gerente']}\n\n"
         conversation_history.append({"role": "assistant", "content": resposta})
     print("🧠 MAI respondeu:", resposta)
+        print("🧠 MAI respondeu:", resposta)
         return resposta
 
     filial = encontrar_filial_mais_proxima(lower_msg)
@@ -101,6 +103,7 @@ def responder_mensagem(mensagem):
             )
             conversation_history.append({"role": "assistant", "content": resposta})
     print("🧠 MAI respondeu:", resposta)
+            print("🧠 MAI respondeu:", resposta)
             return resposta
 
     try:
@@ -113,5 +116,6 @@ def responder_mensagem(mensagem):
         resposta = "Desculpe, não consegui processar sua mensagem agora. Tente novamente mais tarde."
 
     conversation_history.append({"role": "assistant", "content": resposta})
+    print("🧠 MAI respondeu:", resposta)
     print("🧠 MAI respondeu:", resposta)
     return resposta
