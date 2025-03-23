@@ -64,30 +64,27 @@ def responder_mensagem(mensagem):
             "🕒 Atendimento: Seg-Sex, 7:30 às 18:00"
         )
         conversation_history.append({"role": "assistant", "content": resposta})
-    print("🧠 MAI respondeu:", resposta)
         print("🧠 MAI respondeu:", resposta)
         return resposta
 
     if lower_msg in ["1", "orçamento"]:
-        return "Claro! Me diga a cidade onde será feita a entrega do concreto. 😊"
+        resposta = "Claro! Me diga a cidade onde será feita a entrega do concreto. 😊"
+        print("🧠 MAI respondeu:", resposta)
+        return resposta
     elif lower_msg in ["2", "tipos de concreto"]:
-        return "Trabalhamos com concreto usinado, bombeável, estrutural e mais. Posso indicar o ideal pra sua obra! 💡"
+        resposta = "Trabalhamos com concreto usinado, bombeável, estrutural e mais. Posso indicar o ideal pra sua obra! 💡"
+        print("🧠 MAI respondeu:", resposta)
+        return resposta
     elif lower_msg in ["3", "filial"]:
-        return "Informe a cidade e localizo a filial mais próxima. 🗺️"
+        resposta = "Informe a cidade e localizo a filial mais próxima. 🗺️"
+        print("🧠 MAI respondeu:", resposta)
+        return resposta
     elif lower_msg in ["4", "gerente"]:
-        return "Certo! Qual cidade você está? Vou buscar o contato do gerente responsável. 🤝"
+        resposta = "Certo! Qual cidade você está? Vou buscar o contato do gerente responsável. 🤝"
+        print("🧠 MAI respondeu:", resposta)
+        return resposta
     elif lower_msg in ["sair", "encerrar"]:
-        return "Foi um prazer falar com você! Qualquer coisa, é só me chamar. 💙"
-
-    if "feira de santana" in lower_msg or "salvador" in lower_msg:
-        cidade_alvo = "feira de santana" if "feira de santana" in lower_msg else "salvador"
-        opcoes = [nome for nome in filiais_massafort.keys() if cidade_alvo in nome.lower()]
-        resposta = "Encontrei mais de uma filial nessa cidade:\n\n"
-        for filial in opcoes:
-            dados = filiais_massafort[filial]
-            resposta += f"🏢 *{filial}*\n👤 {dados['gerente']} - 📞 https://wa.me/{dados['whatsapp_gerente']}\n\n"
-        conversation_history.append({"role": "assistant", "content": resposta})
-    print("🧠 MAI respondeu:", resposta)
+        resposta = "Foi um prazer falar com você! Qualquer coisa, é só me chamar. 💙"
         print("🧠 MAI respondeu:", resposta)
         return resposta
 
@@ -102,7 +99,6 @@ def responder_mensagem(mensagem):
                 f"📧 E-mail: {dados['email_gerente']}"
             )
             conversation_history.append({"role": "assistant", "content": resposta})
-    print("🧠 MAI respondeu:", resposta)
             print("🧠 MAI respondeu:", resposta)
             return resposta
 
@@ -116,6 +112,5 @@ def responder_mensagem(mensagem):
         resposta = "Desculpe, não consegui processar sua mensagem agora. Tente novamente mais tarde."
 
     conversation_history.append({"role": "assistant", "content": resposta})
-    print("🧠 MAI respondeu:", resposta)
     print("🧠 MAI respondeu:", resposta)
     return resposta
