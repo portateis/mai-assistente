@@ -1,3 +1,3 @@
 # MAI - Assistente Virtual Massa Fort
 
-Assistente baseada em FastAPI + OpenAI + WhatsApp (via Twilio).
+Chatbot em FastAPI com OpenAI e integração WhatsApp.

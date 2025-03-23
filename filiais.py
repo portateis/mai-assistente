@@ -1,4 +1,4 @@
-# Substitua com suas filiais reais
+# Substitua com seus dados reais de filiais
 filiais_massafort = {}
 def encontrar_filial_mais_proxima(cidade): return None
 def obter_dados_da_filial(nome): return None

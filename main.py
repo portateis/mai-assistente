@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request, Form
+from fastapi import FastAPI, Form
 from pydantic import BaseModel
 from fastapi.responses import PlainTextResponse
 from mai_chatbot import responder_mensagem, mostrar_menu_inicial, conversation_history
@@ -31,4 +31,4 @@ async def receber_twilio(Body: str = Form(...)):
 
 @app.get("/")
 async def root():
-    return {"mensagem": "MAI Assistente Virtual - API online! Use POST /chat ou /twilio-webhook para conversar."}
+    return {"mensagem": "MAI está online e pronta para atender via FastAPI."}
