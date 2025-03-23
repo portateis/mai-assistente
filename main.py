@@ -26,9 +26,11 @@ async def chat_com_mai(entrada: MensagemEntrada):
 
 @app.post("/twilio-webhook", response_class=PlainTextResponse)
 async def receber_twilio(Body: str = Form(...)):
+    print("📥 Mensagem recebida do WhatsApp:", Body)
     resposta = responder_mensagem(Body)
     if not resposta or not resposta.strip():
         resposta = "Desculpe, não entendi. Pode repetir?"
+    print("📤 MAI vai responder:", resposta)
     return PlainTextResponse(content=resposta)
 
 @app.get("/")
