@@ -27,7 +27,7 @@ async def chat_com_mai(entrada: MensagemEntrada):
 @app.post("/twilio-webhook", response_class=PlainTextResponse)
 async def receber_twilio(Body: str = Form(...)):
     resposta = responder_mensagem(Body)
-    return resposta
+    return PlainTextResponse(content=resposta)
 
 @app.get("/")
 async def root():
