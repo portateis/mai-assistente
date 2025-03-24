@@ -21,16 +21,10 @@ conversation_history = [
 def mostrar_menu_inicial():
     mensagem = (
         "Olá! 😊 Eu sou a MAI, assistente da *Massa Fort Concreto*."
-"
-        "1️⃣ Fazer orçamento
-"
-        "2️⃣ Tipos de concreto
-"
-        "3️⃣ Localizar filial
-"
-        "4️⃣ Falar com gerente
-
-"
+        "1️⃣ Fazer orçamento"
+        "2️⃣ Tipos de concreto"
+        "3️⃣ Localizar filial"
+        "4️⃣ Falar com gerente"
         "❌ Digite 'sair' para encerrar."
     )
     conversation_history.append({"role": "assistant", "content": mensagem})
