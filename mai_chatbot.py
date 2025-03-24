@@ -20,7 +20,7 @@ conversation_history = [
 
 def mostrar_menu_inicial():
     mensagem = (
-        "Olá! 😊 Eu sou a MAI, assistente da *Massa Fort Concreto*.
+        "Olá! 😊 Eu sou a MAI, assistente da *Massa Fort Concreto*."
 "
         "1️⃣ Fazer orçamento
 "
